@@ -678,10 +678,18 @@ function getLagna(jd,lat=13.0827,geoLon=80.2707){
   return{rasi:Math.floor(sid/30),deg:sid%30,sid};
 }
 
-function getNavamsaRasi(lon){
-  const ni=Math.floor(lon/(360/108));
-  const base=[0,3,6,9,3,6,9,0,6,9,0,3];
-  return(base[Math.floor(ni/9)]+ni%9)%12;
+function getNavamsaRasi(lon) {
+  lon = ((lon % 360) + 360) % 360;
+  const NAVAMSA_START = {
+    0:0, 4:0, 8:0,   // Fire signs  (Mesha, Simha, Dhanu)    -> start Mesha
+    1:9, 5:9, 9:9,   // Earth signs (Rishabha, Kanni, Makara) -> start Makara
+    2:6, 6:6, 10:6,  // Air signs   (Mithuna, Tula, Kumbha)   -> start Tula
+    3:3, 7:3, 11:3   // Water signs (Kataka, Vrischika, Meena) -> start Kataka
+  };
+  const rasi      = Math.floor(lon / 30);
+  const degInRasi = lon - rasi * 30;
+  const navIdx    = Math.floor(degInRasi / (30 / 9));  // 0-8
+  return (NAVAMSA_START[rasi] + navIdx) % 12;
 }
 
 const DASHA_LORD_ORDER=['கேது','சுக்கிரன்','சூரியன்','சந்திரன்','செவ்வாய்','ராகு','குரு','சனி','புதன்'];
