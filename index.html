@@ -115,6 +115,7 @@ align-items: start;
   padding: 8px 12px;
   border-radius: 8px;
   border-left: 3px solid;
+  min-height: 52px;
 }
 .col-header.c1 { background: #0A1828; border-color: var(--lagna-j); }
 .col-header.c2 { background: #140A28; border-color: var(--lagna-g); }
@@ -130,6 +131,7 @@ align-items: start;
   display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
   background: var(--bg3); border: 1px solid var(--border);
   border-radius: 8px; padding: 8px 10px;
+  min-height: 44px;
 }
 .input-bar label { font-size: 10px; color: var(--text-dim); white-space: nowrap; }
 .input-bar input, .input-bar select {
@@ -326,6 +328,7 @@ tbody tr:hover td { background: #0E0E28; }
   padding: 6px 10px;
   background: var(--bg); border: 1px solid var(--border-gold);
   border-radius: 6px;
+  min-height: 44px;
 }
 .saved-row label { font-size: 10px; color: var(--gold); font-weight: 700; white-space: nowrap; }
 .saved-select {
@@ -479,18 +482,18 @@ tbody tr:hover td { background: #0E0E28; }
 
     <!-- CHART 3: CURRENT GOCHAR -->
     <div class="chart-col">
-      <div class="col-header c3">
-        <div>
+      <div class="col-header c3" style="min-height:52px;">
+        <div style="flex:1;">
           <div class="col-title">③ இப்போது கோசார கட்டம்</div>
           <div style="font-size:10px;color:var(--text-dim);margin-top:2px;">தற்போதைய கோசார நிலை</div>
         </div>
         <span class="auto-badge">தானியங்கி</span>
       </div>
-      <div class="input-bar">
+      <div class="input-bar" style="min-height:44px;">
         <label>தற்போதைய நேரம் (IST):</label>
         <span class="auto-badge" id="now-time-label" style="font-size:11px;color:var(--gold-light);">—</span>
       </div>
-      <div class="saved-row" style="visibility:hidden;pointer-events:none;" aria-hidden="true">
+      <div class="saved-row" style="visibility:hidden;pointer-events:none;min-height:44px;" aria-hidden="true">
         <label>💾</label>
       </div>
       <div class="si-chart" id="chart-n-rasi"></div>
