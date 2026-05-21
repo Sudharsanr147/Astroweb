@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ta">
 <head>
 <meta charset="UTF-8">
@@ -39,82 +38,83 @@
 
 html { font-size: 14px; }
 body {
-background: var(--bg);
-color: var(--text);
-font-family: 'Noto Sans Tamil', 'Cormorant Garamond', serif;
-min-height: 100vh;
-overflow-x: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans Tamil', 'Cormorant Garamond', serif;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Subtle star-field background */
 body::before {
-content: '';
-position: fixed; inset: 0; z-index: 0;
-background-image:
-radial-gradient(1px 1px at 20% 15%, #ffffff18 0%, transparent 100%),
-radial-gradient(1px 1px at 75% 30%, #ffffff12 0%, transparent 100%),
-radial-gradient(1px 1px at 45% 70%, #ffffff10 0%, transparent 100%),
-radial-gradient(2px 2px at 85% 80%, #C8961E22 0%, transparent 100%),
-radial-gradient(1px 1px at 10% 60%, #ffffff10 0%, transparent 100%);
-pointer-events: none;
+  content: '';
+  position: fixed; inset: 0; z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 20% 15%, #ffffff18 0%, transparent 100%),
+    radial-gradient(1px 1px at 75% 30%, #ffffff12 0%, transparent 100%),
+    radial-gradient(1px 1px at 45% 70%, #ffffff10 0%, transparent 100%),
+    radial-gradient(2px 2px at 85% 80%, #C8961E22 0%, transparent 100%),
+    radial-gradient(1px 1px at 10% 60%, #ffffff10 0%, transparent 100%);
+  pointer-events: none;
 }
 
 /* ═══════════════════════════════════════
-HEADER
+   HEADER
 ═══════════════════════════════════════ */
 .hdr {
-position: relative; z-index: 10;
-background: linear-gradient(135deg, #08081A 0%, #0C0C22 100%);
-border-bottom: 1px solid var(--border-gold);
-padding: 14px 28px;
-display: flex; align-items: center; gap: 20px;
-box-shadow: 0 2px 40px #C8961E18;
+  position: relative; z-index: 10;
+  background: linear-gradient(135deg, #08081A 0%, #0C0C22 100%);
+  border-bottom: 1px solid var(--border-gold);
+  padding: 14px 28px;
+  display: flex; align-items: center; gap: 20px;
+  box-shadow: 0 2px 40px #C8961E18;
 }
 .hdr-title {
-font-family: 'Cinzel Decorative', serif;
-font-size: 22px; color: var(--gold-light);
-letter-spacing: 3px;
-text-shadow: 0 0 30px var(--gold-glow);
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 22px; color: var(--gold-light);
+  letter-spacing: 3px;
+  text-shadow: 0 0 30px var(--gold-glow);
 }
 .hdr-sub { font-size: 12px; color: var(--text-dim); letter-spacing: 1px; margin-top: 2px; }
 .hdr-right { margin-left: auto; display: flex; align-items: center; gap: 14px; }
 .now-badge {
-background: var(--gold); color: #000;
-border: none; border-radius: 6px;
-padding: 6px 14px; font-size: 12px; font-weight: 700;
-cursor: pointer; font-family: 'Noto Sans Tamil', sans-serif;
-transition: background 0.2s;
+  background: var(--gold); color: #000;
+  border: none; border-radius: 6px;
+  padding: 6px 14px; font-size: 12px; font-weight: 700;
+  cursor: pointer; font-family: 'Noto Sans Tamil', sans-serif;
+  transition: background 0.2s;
 }
 .now-badge:hover { background: var(--gold-light); }
 .time-display { font-size: 12px; color: var(--gold); font-weight: 600; }
 
 /* ═══════════════════════════════════════
-MAIN LAYOUT
+   MAIN LAYOUT
 ═══════════════════════════════════════ */
 .main {
-position: relative; z-index: 1;
-padding: 20px 24px 160px;
-max-width: 1800px;
-margin: 0 auto;
+  position: relative; z-index: 1;
+  padding: 20px 24px 160px;
+  max-width: 1800px;
+  margin: 0 auto;
 }
 
 /* ═══════════════════════════════════════
-INPUT BARS (above each chart column)
+   INPUT BARS (above each chart column)
 ═══════════════════════════════════════ */
 .charts-grid {
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-gap: 18px;
-margin-bottom: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+align-items: start;
 }
 
 .chart-col { display: flex; flex-direction: column; gap: 10px; }
 
 .col-header {
-display: flex; align-items: center; gap: 8px;
-padding: 8px 12px;
-border-radius: 8px;
-border-left: 3px solid;
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border-left: 3px solid;
 }
 .col-header.c1 { background: #0A1828; border-color: var(--lagna-j); }
 .col-header.c2 { background: #140A28; border-color: var(--lagna-g); }
@@ -127,79 +127,79 @@ border-left: 3px solid;
 .col-sub { font-size: 10px; color: var(--text-dim); margin-left: auto; }
 
 .input-bar {
-display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
-background: var(--bg3); border: 1px solid var(--border);
-border-radius: 8px; padding: 8px 10px;
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 8px; padding: 8px 10px;
 }
 .input-bar label { font-size: 10px; color: var(--text-dim); white-space: nowrap; }
 .input-bar input, .input-bar select {
-background: var(--bg2); border: 1px solid var(--border);
-color: var(--text); border-radius: 5px;
-padding: 4px 7px; font-size: 11px;
-font-family: 'Noto Sans Tamil', sans-serif;
-flex: 1; min-width: 80px;
+  background: var(--bg2); border: 1px solid var(--border);
+  color: var(--text); border-radius: 5px;
+  padding: 4px 7px; font-size: 11px;
+  font-family: 'Noto Sans Tamil', sans-serif;
+  flex: 1; min-width: 80px;
 }
 .calc-btn {
-background: var(--gold); color: #000; border: none;
-border-radius: 5px; padding: 5px 12px;
-font-size: 11px; font-weight: 700; cursor: pointer;
-font-family: 'Noto Sans Tamil', sans-serif;
-white-space: nowrap;
+  background: var(--gold); color: #000; border: none;
+  border-radius: 5px; padding: 5px 12px;
+  font-size: 11px; font-weight: 700; cursor: pointer;
+  font-family: 'Noto Sans Tamil', sans-serif;
+  white-space: nowrap;
 }
 .calc-btn:hover { background: var(--gold-light); }
 .auto-badge {
-font-size: 10px; color: var(--exalt);
-background: #2ECC7122; border: 1px solid #2ECC7144;
-border-radius: 12px; padding: 3px 10px;
+  font-size: 10px; color: var(--exalt);
+  background: #2ECC7122; border: 1px solid #2ECC7144;
+  border-radius: 12px; padding: 3px 10px;
 }
 
 /* ═══════════════════════════════════════
-SOUTH INDIAN CHART
+   SOUTH INDIAN CHART
 ═══════════════════════════════════════ */
 .si-chart {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-grid-template-rows: repeat(4, 1fr);
-gap: 2px;
-aspect-ratio: 1/1;
-background: var(--gold-dim);
-border: 1.5px solid var(--gold);
-border-radius: 3px;
-box-shadow: 0 0 20px var(--gold-glow);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 2px;
+  aspect-ratio: 1/1;
+  background: var(--gold-dim);
+  border: 1.5px solid var(--gold);
+  border-radius: 3px;
+  box-shadow: 0 0 20px var(--gold-glow);
 }
 .cell {
-background: var(--bg2);
-position: relative;
-display: flex; flex-direction: column;
-align-items: center; justify-content: center;
-gap: 2px; padding: 4px 3px;
-overflow: hidden;
+  background: var(--bg2);
+  position: relative;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 2px; padding: 4px 3px;
+  overflow: hidden;
 }
 .cell.centre {
-grid-column: 2/4; grid-row: 2/4;
-background: #080818;
-flex-direction: column;
-align-items: center; justify-content: center;
-gap: 4px;
+  grid-column: 2/4; grid-row: 2/4;
+  background: #080818;
+  flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 4px;
 }
 .rasi-name {
-position: absolute; top: 2px; right: 3px;
-font-size: 8px; color: var(--gold-dim);
-font-weight: 700;
+  position: absolute; top: 2px; right: 3px;
+  font-size: 8px; color: var(--gold-dim);
+  font-weight: 700;
 }
 .house-num {
-position: absolute; bottom: 2px; left: 3px;
-font-size: 8px; color: #2A2A48; font-weight: 800;
+  position: absolute; bottom: 2px; left: 3px;
+  font-size: 8px; color: #2A2A48; font-weight: 800;
 }
 .lagna-tri-j {
-position: absolute; top: 0; left: 0;
-border-top: 14px solid var(--lagna-j);
-border-right: 14px solid transparent;
+  position: absolute; top: 0; left: 0;
+  border-top: 14px solid var(--lagna-j);
+  border-right: 14px solid transparent;
 }
 .lagna-tri-g {
-position: absolute; top: 0; right: 0;
-border-top: 14px solid var(--lagna-g);
-border-left: 14px solid transparent;
+  position: absolute; top: 0; right: 0;
+  border-top: 14px solid var(--lagna-g);
+  border-left: 14px solid transparent;
 }
 .pl { display: flex; align-items: baseline; gap: 2px; line-height: 1.2; }
 .pl-n { font-size: 11px; font-weight: 700; }
@@ -212,20 +212,20 @@ border-left: 14px solid transparent;
 .pl-d { font-size: 8px; color: var(--degree); }
 
 .centre-label {
-font-family: 'Cinzel Decorative', serif;
-font-size: 10px; color: var(--gold); letter-spacing: 1px;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 10px; color: var(--gold); letter-spacing: 1px;
 }
 .centre-rasi { font-size: 11px; color: var(--text); text-align: center; line-height: 1.4; font-weight: 600; }
 .centre-deg  { font-size: 9px; color: var(--degree); }
 
 /* ═══════════════════════════════════════
-LEGEND / PAARVAI BAR
+   LEGEND / PAARVAI BAR
 ═══════════════════════════════════════ */
 .paarvai-bar {
-display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-background: var(--bg3); border: 1px solid var(--border);
-border-radius: 8px; padding: 8px 14px;
-margin-bottom: 18px;
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 8px; padding: 8px 14px;
+  margin-bottom: 18px;
 }
 .pv-label { font-size: 11px; color: var(--gold); font-weight: 700; }
 .pv-item { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--text-dim); }
@@ -235,60 +235,60 @@ margin-bottom: 18px;
 .leg-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
 
 /* ═══════════════════════════════════════
-NAVAMSA ROW
+   NAVAMSA ROW
 ═══════════════════════════════════════ */
 .nav-row-title {
-font-size: 11px; color: var(--gold-dim); font-weight: 700;
-letter-spacing: 1px; margin-bottom: 10px;
-padding-bottom: 5px; border-bottom: 1px solid var(--border-gold);
+  font-size: 11px; color: var(--gold-dim); font-weight: 700;
+  letter-spacing: 1px; margin-bottom: 10px;
+  padding-bottom: 5px; border-bottom: 1px solid var(--border-gold);
 }
 
 /* ═══════════════════════════════════════
-PLANET TABLE
+   PLANET TABLE
 ═══════════════════════════════════════ */
 .section-title {
-font-size: 11px; color: var(--gold); font-weight: 700;
-letter-spacing: 1px; margin-bottom: 6px;
-padding-bottom: 4px; border-bottom: 1px solid var(--border-gold);
+  font-size: 11px; color: var(--gold); font-weight: 700;
+  letter-spacing: 1px; margin-bottom: 6px;
+  padding-bottom: 4px; border-bottom: 1px solid var(--border-gold);
 }
 table { width: 100%; border-collapse: collapse; font-size: 11px; }
 thead th {
-background: var(--bg3); color: var(--text-dim);
-font-weight: 600; text-align: left;
-padding: 4px 6px; font-size: 10px;
-border-bottom: 1px solid var(--border);
+  background: var(--bg3); color: var(--text-dim);
+  font-weight: 600; text-align: left;
+  padding: 4px 6px; font-size: 10px;
+  border-bottom: 1px solid var(--border);
 }
 tbody td { padding: 4px 6px; border-bottom: 1px solid #0C0C1C; }
 tbody tr:hover td { background: #0E0E28; }
 
 /* ═══════════════════════════════════════
-BOTTOM SECTION — 2 columns
+   BOTTOM SECTION — 2 columns
 ═══════════════════════════════════════ */
 .bottom-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 18px;
-margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 18px;
 }
 .bottom-col { }
 .bottom-col-title {
-font-size: 12px; font-weight: 700; margin-bottom: 8px;
-padding: 6px 10px; border-radius: 6px;
-display: flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 700; margin-bottom: 8px;
+  padding: 6px 10px; border-radius: 6px;
+  display: flex; align-items: center; gap: 8px;
 }
 .bc1 { background: #0A1828; color: var(--lagna-j); border-left: 3px solid var(--lagna-j); }
 .bc2 { background: #0A1828; color: var(--gold-light); border-left: 3px solid var(--gold); }
 
 /* ═══════════════════════════════════════
-DASHA TABS
+   DASHA TABS
 ═══════════════════════════════════════ */
 .dasha-tabs { display: flex; gap: 3px; margin-bottom: 6px; }
 .dasha-tab {
-flex: 1; background: var(--bg3); color: var(--text-dim);
-border: 1px solid var(--border); border-radius: 5px;
-padding: 5px 4px; font-size: 10px; font-weight: 600;
-cursor: pointer; font-family: 'Noto Sans Tamil', sans-serif;
-transition: all 0.2s; text-align: center;
+  flex: 1; background: var(--bg3); color: var(--text-dim);
+  border: 1px solid var(--border); border-radius: 5px;
+  padding: 5px 4px; font-size: 10px; font-weight: 600;
+  cursor: pointer; font-family: 'Noto Sans Tamil', sans-serif;
+  transition: all 0.2s; text-align: center;
 }
 .dasha-tab.active { background: var(--gold); color: #000; border-color: var(--gold); }
 .dasha-panel { display: none; }
@@ -309,67 +309,65 @@ transition: all 0.2s; text-align: center;
 
 /* Footnotes */
 .footnote {
-font-size: 10px; color: var(--text-dim);
-background: var(--bg3); border: 1px solid var(--border);
-border-radius: 6px; padding: 6px 10px; margin-top: 6px;
-line-height: 1.7;
+  font-size: 10px; color: var(--text-dim);
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 6px; padding: 6px 10px; margin-top: 6px;
+  line-height: 1.7;
 }
 .fn-j { color: var(--lagna-j); font-weight: 700; }
 .fn-g { color: var(--lagna-g); font-weight: 700; }
 
 /* ═══════════════════════════════════════
-SAVED CHARTS
+   SAVED CHARTS
 ═══════════════════════════════════════ */
 .saved-row {
-display: flex; gap: 6px; align-items: center;
-flex-wrap: wrap; margin-top: 6px;
-padding: 6px 10px;
-background: var(--bg); border: 1px solid var(--border-gold);
-border-radius: 6px;
+  display: flex; gap: 6px; align-items: center;
+  flex-wrap: wrap; margin-top: 6px;
+  padding: 6px 10px;
+  background: var(--bg); border: 1px solid var(--border-gold);
+  border-radius: 6px;
 }
 .saved-row label { font-size: 10px; color: var(--gold); font-weight: 700; white-space: nowrap; }
 .saved-select {
-flex: 1; min-width: 140px;
-background: var(--bg2); border: 1px solid var(--border);
-color: var(--text); border-radius: 5px;
-padding: 4px 7px; font-size: 11px;
-font-family: 'Noto Sans Tamil', sans-serif;
+  flex: 1; min-width: 140px;
+  background: var(--bg2); border: 1px solid var(--border);
+  color: var(--text); border-radius: 5px;
+  padding: 4px 7px; font-size: 11px;
+  font-family: 'Noto Sans Tamil', sans-serif;
 }
 .save-btn {
-background: #2ECC7133; color: var(--exalt);
-border: 1px solid #2ECC7155; border-radius: 5px;
-padding: 4px 10px; font-size: 11px; font-weight: 700;
-cursor: pointer; white-space: nowrap;
+  background: #2ECC7133; color: var(--exalt);
+  border: 1px solid #2ECC7155; border-radius: 5px;
+  padding: 4px 10px; font-size: 11px; font-weight: 700;
+  cursor: pointer; white-space: nowrap;
 }
 .save-btn:hover { background: #2ECC7155; }
 .del-btn {
-background: #E74C3C22; color: var(--neecha);
-border: 1px solid #E74C3C44; border-radius: 5px;
-padding: 4px 8px; font-size: 11px; cursor: pointer;
+  background: #E74C3C22; color: var(--neecha);
+  border: 1px solid #E74C3C44; border-radius: 5px;
+  padding: 4px 8px; font-size: 11px; cursor: pointer;
 }
 .del-btn:hover { background: #E74C3C44; }
 .save-name-input {
-background: var(--bg2); border: 1px solid var(--border-gold);
-color: var(--text); border-radius: 5px;
-padding: 4px 8px; font-size: 11px;
-font-family: 'Noto Sans Tamil', sans-serif;
-width: 140px;
+  background: var(--bg2); border: 1px solid var(--border-gold);
+  color: var(--text); border-radius: 5px;
+  padding: 4px 8px; font-size: 11px;
+  font-family: 'Noto Sans Tamil', sans-serif;
+  width: 140px;
 }
 .save-confirm-btn {
-background: var(--gold); color: #000; border: none;
-border-radius: 5px; padding: 4px 12px; font-size: 11px;
-font-weight: 800; cursor: pointer;
+  background: var(--gold); color: #000; border: none;
+  border-radius: 5px; padding: 4px 12px; font-size: 11px;
+  font-weight: 800; cursor: pointer;
 }
 
 @keyframes fadeIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:translateY(0); } }
 .charts-grid, .bottom-grid { animation: fadeIn 0.4s ease; }
 </style>
-
 </head>
 <body>
 
 <!-- HEADER -->
-
 <div class="hdr">
   <div>
     <div class="hdr-title">☽ JYOTHISHAM</div>
@@ -386,7 +384,6 @@ font-weight: 800; cursor: pointer;
   <!-- ══════════════════════════════════
        ROW 1: INPUT BARS + RASI CHARTS
   ══════════════════════════════════ -->
-
   <div class="charts-grid" id="rasi-grid">
 
     <!-- CHART 1: JATAKA -->
@@ -493,6 +490,9 @@ font-weight: 800; cursor: pointer;
         <label>தற்போதைய நேரம் (IST):</label>
         <span class="auto-badge" id="now-time-label" style="font-size:11px;color:var(--gold-light);">—</span>
       </div>
+      <div class="saved-row" style="visibility:hidden;pointer-events:none;" aria-hidden="true">
+        <label>💾</label>
+      </div>
       <div class="si-chart" id="chart-n-rasi"></div>
       <div class="footnote">
         <span class="fn-j">▲ ஜல</span> = ஜாதக லக்னம் &nbsp;·&nbsp;
@@ -500,11 +500,9 @@ font-weight: 800; cursor: pointer;
         <span id="fn-n-rasi" style="color:var(--degree)">—</span>
       </div>
     </div>
-
   </div>
 
   <!-- PAARVAI LEGEND -->
-
   <div class="paarvai-bar">
     <span class="pv-label">பார்வை:</span>
     <div class="pv-item"><div class="pv-line" style="background:#3DFFAA"></div>குரு (5,7,9)</div>
@@ -522,7 +520,6 @@ font-weight: 800; cursor: pointer;
   <!-- ══════════════════════════════════
        ROW 2: NAVAMSA CHARTS
   ══════════════════════════════════ -->
-
   <div class="nav-row-title">நவாம்ச கட்டங்கள் (Navamsa)</div>
   <div class="charts-grid" id="navamsa-grid">
     <div class="chart-col">
@@ -542,7 +539,6 @@ font-weight: 800; cursor: pointer;
   <!-- ══════════════════════════════════
        ROW 3: PLANET TABLES
   ══════════════════════════════════ -->
-
   <div class="charts-grid" style="margin-top:18px;">
     <div>
       <div class="section-title">① ஜாதக கிரக விவரங்கள்</div>
@@ -561,7 +557,6 @@ font-weight: 800; cursor: pointer;
   <!-- ══════════════════════════════════
        ROW 4: NATCHATRA SARAM
   ══════════════════════════════════ -->
-
   <div class="charts-grid" style="margin-top:18px;">
     <div>
       <div class="section-title">① நட்சத்திர சாரம்</div>
@@ -580,7 +575,6 @@ font-weight: 800; cursor: pointer;
   <!-- ══════════════════════════════════
        ROW 5: DUAL DASHA TABLES
   ══════════════════════════════════ -->
-
   <div class="bottom-grid">
 
     <!-- LEFT: Jataka dasha as on Gochar date -->
@@ -602,7 +596,6 @@ font-weight: 800; cursor: pointer;
       </div>
       <div id="dasha-j-now"></div>
     </div>
-
   </div>
 
 </div><!-- end main -->
@@ -1097,6 +1090,5 @@ window.addEventListener('load',()=>{
   },60000);
 });
 </script>
-
 </body>
 </html>
