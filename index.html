@@ -2,7 +2,7 @@
 <html lang="ta">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, shrink-to-fit=no">
 <title>ஜோதிஷம் — ஜாதக கோசார ஒப்பீடு</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@300;400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
@@ -106,6 +106,7 @@ body::before {
   gap: 18px;
   margin-bottom: 18px;
 align-items: start;
+  align-items: start;
 }
 
 .chart-col { display: flex; flex-direction: column; gap: 10px; }
@@ -366,6 +367,38 @@ tbody tr:hover td { background: #0E0E28; }
 
 @keyframes fadeIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:translateY(0); } }
 .charts-grid, .bottom-grid { animation: fadeIn 0.4s ease; }
+
+/* ═══════════════════════════════════════
+   CONTROLS BLOCK — fixed height ensures all 3 chart grids
+   start at exactly the same vertical position
+═══════════════════════════════════════ */
+.controls-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 180px;          /* fixed: col-header + input-bar + saved-row */
+  overflow: visible;
+}
+
+/* Responsive: tablet/iPad — 2 columns then 1 */
+@media (max-width: 1024px) {
+  .charts-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .controls-block { height: auto; min-height: 150px; }
+}
+@media (max-width: 680px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+  html { font-size: 13px; }
+  .controls-block { height: auto; }
+  .main { padding: 12px 12px 120px; }
+}
+
+/* Ensure body fills full viewport width on all devices */
+html, body { width: 100%; overflow-x: hidden; }
+
 </style>
 </head>
 <body>
@@ -391,6 +424,7 @@ tbody tr:hover td { background: #0E0E28; }
 
     <!-- CHART 1: JATAKA -->
     <div class="chart-col">
+      <div class="controls-block">
       <div class="col-header c1">
         <div>
           <div class="col-title">① ஜாதக ராசி கட்டம்</div>
@@ -427,6 +461,7 @@ tbody tr:hover td { background: #0E0E28; }
           <button class="save-confirm-btn" onclick="confirmSave('j')">சேமி</button>
         </span>
       </div>
+      </div><!-- end controls-block -->
       <div class="si-chart" id="chart-j-rasi"></div>
       <div class="footnote">
         <span class="fn-j">▲ ஜல</span> = ஜாதக லக்னம் &nbsp;·&nbsp;
@@ -436,6 +471,7 @@ tbody tr:hover td { background: #0E0E28; }
 
     <!-- CHART 2: GOCHAR -->
     <div class="chart-col">
+      <div class="controls-block">
       <div class="col-header c2">
         <div>
           <div class="col-title">② கோசார ராசி கட்டம்</div>
@@ -472,6 +508,7 @@ tbody tr:hover td { background: #0E0E28; }
           <button class="save-confirm-btn" onclick="confirmSave('g')">சேமி</button>
         </span>
       </div>
+      </div><!-- end controls-block -->
       <div class="si-chart" id="chart-g-rasi"></div>
       <div class="footnote">
         <span class="fn-j">▲ ஜல</span> = ஜாதக லக்னம் &nbsp;·&nbsp;
@@ -482,20 +519,22 @@ tbody tr:hover td { background: #0E0E28; }
 
     <!-- CHART 3: CURRENT GOCHAR -->
     <div class="chart-col">
-      <div class="col-header c3" style="min-height:52px;">
+      <div class="controls-block">
+      <div class="col-header c3">
         <div style="flex:1;">
           <div class="col-title">③ இப்போது கோசார கட்டம்</div>
           <div style="font-size:10px;color:var(--text-dim);margin-top:2px;">தற்போதைய கோசார நிலை</div>
         </div>
         <span class="auto-badge">தானியங்கி</span>
       </div>
-      <div class="input-bar" style="min-height:44px;">
+      <div class="input-bar">
         <label>தற்போதைய நேரம் (IST):</label>
         <span class="auto-badge" id="now-time-label" style="font-size:11px;color:var(--gold-light);">—</span>
       </div>
-      <div class="saved-row" style="visibility:hidden;pointer-events:none;min-height:44px;" aria-hidden="true">
+      <div class="saved-row" style="visibility:hidden;pointer-events:none;" aria-hidden="true">
         <label>💾</label>
       </div>
+      </div><!-- end controls-block -->
       <div class="si-chart" id="chart-n-rasi"></div>
       <div class="footnote">
         <span class="fn-j">▲ ஜல</span> = ஜாதக லக்னம் &nbsp;·&nbsp;
